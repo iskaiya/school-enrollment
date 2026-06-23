@@ -1,7 +1,7 @@
 <header id = "main-header">
         <div class = "name">
             <a href="/" >
-                <img src="images/logo.jpg" alt="University Logo" class = "logo-img">
+                <img src="{{ asset('images/logo.jpg') }}" alt="University Logo" class = "logo-img">
             </a>
         </div>
 
@@ -88,18 +88,15 @@
     }
     
     .btn-primary {
-            color: white;
-            background-color: #007dc4;
-            border: 2px solid white;
+            color: #007dc4;
+            border: 2px solid #007dc4;
             padding: 0.75rem 3rem;
             border-radius: 30px;
             font-weight: 500;
             text-decoration: none;
-            display: inline-flex;
+            display: inline-block;
             transition: all 0.3s ease;
             cursor: pointer;
-            align-items: center;
-            justify-content: center;
         }
 
             .btn-primary:hover {

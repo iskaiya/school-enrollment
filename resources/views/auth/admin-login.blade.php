@@ -1,12 +1,13 @@
 @extends('common.main')
-@section('title', 'Log In')
+@section('title','Admin Log In')
 @section('content')
+
 
 <div class = "container">
     <div class = "row justify-content-center">
         <div class = "col-lg-6 new">
-            <h1>Log In</h1>
-            <form class = "email shadow-lg" method = "POST" action = "">
+            <h1>Admin Log In</h1>
+            <form class = "email shadow-lg" method = "POST" action = "{{ route ('admin.login.submit') }}">
                 @csrf
             
             @if($errors->any())
@@ -30,19 +31,6 @@
 
             
             <button type="submit" class="btn">Log In</button>
-
-            <div class="form-group mt-4 text-center">
-            <hr class="my-4">
-            
-            <!-- Clear, secondary path for school administrators -->
-            <p class="text-muted small mb-0">
-                School staff or administrator? 
-                <a href="{{ route('admin.login') }}" class="text-danger font-weight-bold">
-                    Go to Admin Portal
-                </a>
-            </p>
-        </div>
-
             </form>
         </div>
     </div>
@@ -72,6 +60,5 @@
         background-color: #00737a;
     }
 </style>
-
 
 @endsection
