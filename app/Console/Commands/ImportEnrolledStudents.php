@@ -36,6 +36,8 @@ class ImportEnrolledStudents extends Command
                 [
                     'name' => $data['name'] ?? null,
                     'student_id' => $data['student_id'] ?? null,
+                    'year'    => $data['year'] ?? null,
+                    'program' => $data['program'] ?? null,
                 ]
             );
 
