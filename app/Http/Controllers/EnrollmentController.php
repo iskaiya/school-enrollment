@@ -98,4 +98,37 @@ class EnrollmentController extends Controller
             ->route('enrollment.index')
             ->with('success', 'Enrollment submitted successfully.');
     }
+
+    public function schedule()
+        {
+            $userID = Auth::id();
+            $enrollmentStatus = null;
+            $subjects = collect();
+
+            if ($userID) {
+                $enrollmentStatus = DB::table('enrollments')
+                    ->where('user_id', $userID)
+                    ->value('status');
+
+                if ($enrollmentStatus === 'approved') {
+                    $subjects = DB::table('enrollments')
+                        ->join('subjects', 'enrollments.subject_id', '=', 'subjects.id')
+                        ->join('sections', 'enrollments.section_id', '=', 'sections.id')
+                        ->select(
+                            'subjects.course_code',
+                            'subjects.course_name',
+                            'subjects.units',
+                            'sections.section_code',
+                            'sections.day_schedule',
+                            'sections.start_time',
+                            'sections.end_time',
+                            'sections.professor',
+                        )
+                        ->where('enrollments.user_id', $userID)
+                        ->get();
+                }
+            }
+
+            return view('home', compact('enrollmentStatus', 'subjects'));
+        }
 }

@@ -26,6 +26,8 @@
             Please wait for approval.
         </div>
 
+        <a href="/home"><i class="bi bi-arrow-left"></i> Back to Home</a>
+
     @else
 
         <div class="enroll-box shadow-lg">

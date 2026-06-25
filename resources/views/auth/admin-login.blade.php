@@ -45,7 +45,7 @@
 
     .new h1 {
         margin-top: 30px;
-        color: #00737a;
+        color: #007dc4;
         text-align: center;
     }
 
@@ -57,7 +57,7 @@
 
     .btn {
         color: white;
-        background-color: #00737a;
+        background-color: #007dc4;
     }
 </style>
 
