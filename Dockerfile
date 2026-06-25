@@ -10,7 +10,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Build Laravel app
-FROM php:8.3-cli
+FROM php:8.4-cli
 
 RUN apt-get update && apt-get install -y \
     git \
