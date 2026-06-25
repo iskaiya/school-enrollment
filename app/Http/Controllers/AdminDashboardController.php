@@ -68,7 +68,7 @@ class AdminDashboardController extends Controller
     }
 
     public function reject($id){
-        DB::table('students')->where('user_id', $id)->update(['status' => 'rejected']);
+        DB::table('enrollments')->where('user_id', $id)->update(['status' => 'rejected']);
         return redirect()->route('admin.pendingPage');
     }
 
